@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WebAcademy.Model.TbFuncionario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de Categorias</h1>
+
+<p>
+    <a asp-action="Create">Criar Funcionário</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FunId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FunNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FunDataNasc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FunCpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FunEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FunModalidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FunCategoria)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FunId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FunNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FunDataNasc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FunCpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FunEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FunModalidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FunCategoria)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FunId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.FunId">Detailhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.FunId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,54 @@
+﻿@model WebAcademy.Model.TbFuncionario
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detailhes dos Funcionários</h1>
+
+<div>
+    <h4>TbFuncionario</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FunNome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FunNome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FunDataNasc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FunDataNasc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FunCpf)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FunCpf)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FunEmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FunEmail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FunModalidade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FunModalidade)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FunCategoria)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FunCategoria)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.FunId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
