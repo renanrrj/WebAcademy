@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebAcademy.Model.TbCliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CliNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CliDataNasc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CliCpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CliEmail)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CliNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CliDataNasc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CliCpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CliEmail)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CliId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CliId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CliId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

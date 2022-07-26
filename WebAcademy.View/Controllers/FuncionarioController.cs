@@ -15,8 +15,8 @@ namespace WebAcademy.View.Controllers
         // GET: Funcionario
         public ActionResult Index()
         {
-            List<TbFuncionario> oLista = odb.TbFuncionario.ToList();
-            return View(oLista);
+            List<TbFuncionario> oListaFun = odb.TbFuncionario.ToList();
+            return View(oListaFun);
         }
 
         // GET: Funcionario/Details/5

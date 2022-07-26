@@ -1,0 +1,26 @@
+1- Criar contexto
+	db_WebAcademyContext odb;
+
+2- Construir contexto
+	public ...Controller ()
+        	{
+            		odb = new db_WebAcademyContext ();
+        	}	
+
+3- exibir dados do banco
+	List <TbCliente> oListaCli = db.TbCliente.ToList();
+	return View(oListaCli);
+
+-> Cria uma lista da tabela de nome "oList...."
+	list<Tabela> oLista
+
+-> indica o local para busca
+	=
+-> indica o banco e retorna uma lista ".ToList()"
+	db.TbCliente.ToList();
+-> Adiciona no return a lista salva em oListCli ( o ToList do TbCliente no caso desse exemplo )
+
+4- Create
+5- Read
+6- Update
+7- Delete
