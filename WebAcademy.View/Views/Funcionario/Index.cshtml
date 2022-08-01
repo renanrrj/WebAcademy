@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<WebAcademy.Model.TbFuncionario>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Funcionário";
 }
 
-<h1>Lista de Categorias</h1>
+<h1>Lista de Funcionários</h1>
 
 <p>
-    <a asp-action="Create">Criar Funcionário</a>
+    <a asp-action="Create">Adicionar Funcionário</a>
 </p>
 <table class="table">
     <thead>
@@ -62,8 +62,8 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.FunId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.FunId">Detailhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.FunId">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.FunId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.FunId">Apagar</a>
             </td>
         </tr>
 }

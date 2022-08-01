@@ -1,0 +1,31 @@
+CRUD Aluno
+adicionar aluno
+excluir aluno
+Editar aluno
+
+-------------
+CRUD Professor
+adicionar Professor
+excluir Professor
+editar Professor
+
+-------------
+
+CRUD Treino
+adicionar Treino 
+excluir Treino
+editar Treino
+
+-------------
+
+tb_Cliente (cli_Nome, cli_DataNascimento, cli_CPF)
+tb_Professor (prof_Nome, prof_DataNascimento, Profe_CPF)
+tb_Treino (tre_DataHora, tre_Modalidade)
+
+-------------
+Relatorio de mensalidade
+
+-------------
+Home
+Login
+

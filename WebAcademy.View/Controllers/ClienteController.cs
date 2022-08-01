@@ -23,7 +23,7 @@ namespace WebAcademy.View.Controllers
         // GET: ClienteController/Details/5
         public ActionResult Details(int id)
         {
-            TbCliente? oCli = db.TbCliente.Find(id);
+            TbCliente ?oCli = db.TbCliente.Find(id);
             return View(oCli);
         }
 

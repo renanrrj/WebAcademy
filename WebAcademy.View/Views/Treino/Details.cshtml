@@ -1,0 +1,30 @@
+﻿@model WebAcademy.Model.TbTreino
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>Detalhes do treino</h1>
+
+<div>
+    <h4>Treino detalhado</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TreDataHora)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TreDataHora)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TreModalidade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TreModalidade)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.TreId">Edit</a> |
+    <a asp-action="View">Voltar para Treino</a>
+</div>
