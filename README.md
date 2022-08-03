@@ -1,1 +1,1 @@
-# WebAcademy.View
+# WebAcademy
