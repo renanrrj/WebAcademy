@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Modalidade";
+}
+<div class="text-center">
+
+    <h1>Modalidades</h1>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-outline-primary" asp-controller="Modalidade" asp-action="AdicionarProf">Adicionar Modalidade</a>
+    </div>
+    <br />
+
+    <table class="table table-primary table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Modalidade</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Jiu-Jítsu</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a class="btn btn-outline-warning" asp-controller="Modalidade" asp-action="EditarModali">Editar</a>
+                        <a role="button" class="btn btn-outline-danger" asp-controller="Modalidade" asp-action="ExcluirModali">Apagar</a>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Jiu-Jítsu</td>                
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a class="btn btn-outline-warning" asp-controller="Modalidade" asp-action="EditarModali">Editar</a>
+                        <a role="button" class="btn btn-outline-danger" asp-controller="Modalidade" asp-action="ExcluirModali">Apagar</a>
+                    </div>
+                </td>
+            </tr>
+
+            
+
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,101 @@
+﻿@{
+    @model IEnumerable<ClienteModel>
+    ViewData["Title"] = "Cliente";
+}
+<div class="text-center">
+
+    <h1>Clientes</h1>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-outline-primary" asp-controller="Cliente" asp-action="AdicionarCliente">Adicionar Clientes</a>        
+    </div>
+    <br />
+
+    <table class="table table-primary table-striped">
+        <thead>
+            <tr>                
+                <th scope="col">Nome</th>
+                <th scope="col">DataNasc</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Endereço</th>
+                <th scope="col">CEP</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Modalidade</th>
+                <th scope="col">DataPgto</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>               
+                <td>Mark</td>
+                <td>30/01/1990</td>
+                <td>111.222.333.44</td>
+                <td>Rua da Curva</td>
+                <td>11.222-333</td>
+                <td>(11) 2222-3333</td>
+                <td>jiu-Jitsu</td>
+                <td>30/01/1990</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a class="btn btn-outline-warning" asp-controller="Cliente" asp-action="EditarCliente">Editar</a>
+                        <a role="button" class="btn btn-outline-danger" asp-controller="Cliente" asp-action="ExcluirCliente">Apagar</a>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>John</td>
+                <td>30/01/1990</td>
+                <td>111.222.333.44</td>
+                <td>Rua da Curva</td>
+                <td>11.222-333</td>
+                <td>(11) 2222-3333</td>
+                <td>jiu-Jitsu</td>
+                <td>30/01/1990</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a class="btn btn-outline-warning" asp-controller="Cliente" asp-action="EditarCliente">Editar</a>
+                        <a role="button" class="btn btn-outline-danger" asp-controller="Cliente" asp-action="ExcluirCliente">Apagar</a>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Rick</td>
+                <td>30/01/1990</td>
+                <td>111.222.333.44</td>
+                <td>Rua da Curva</td>
+                <td>11.222-333</td>
+                <td>(11) 2222-3333</td>
+                <td>jiu-Jitsu</td>
+                <td>30/01/1990</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a class="btn btn-outline-warning" asp-controller="Cliente" asp-action="EditarCliente">Editar</a>
+                        <a role="button" class="btn btn-outline-danger" asp-controller="Cliente" asp-action="ExcluirCliente">Apagar</a>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Harry</td>
+                <td>30/01/1990</td>
+                <td>111.222.333.44</td>
+                <td>Rua da Curva</td>
+                <td>11.222-333</td>
+                <td>(11) 2222-3333</td>
+                <td>jiu-Jitsu</td>
+                <td>30/01/1990</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a class="btn btn-outline-warning" asp-controller="Cliente" asp-action="EditarCliente">Editar</a>
+                        <a role="button" class="btn btn-outline-danger" asp-controller="Cliente" asp-action="ExcluirCliente">Apagar</a>
+                    </div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
