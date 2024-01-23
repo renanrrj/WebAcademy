@@ -1,4 +1,5 @@
 ﻿@{
+    @model IEnumerable<ModalidadeModel>
     ViewData["Title"] = "Modalidade";
 }
 <div class="text-center">
@@ -20,30 +21,22 @@
         </thead>
 
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Jiu-Jítsu</td>
-                <td>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <a class="btn btn-outline-warning" asp-controller="Modalidade" asp-action="EditarModali">Editar</a>
-                        <a role="button" class="btn btn-outline-danger" asp-controller="Modalidade" asp-action="ExcluirModali">Apagar</a>
-                    </div>
-                </td>
-            </tr>
-
-            <tr>
-                <td>2</td>
-                <td>Jiu-Jítsu</td>                
-                <td>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <a class="btn btn-outline-warning" asp-controller="Modalidade" asp-action="EditarModali">Editar</a>
-                        <a role="button" class="btn btn-outline-danger" asp-controller="Modalidade" asp-action="ExcluirModali">Apagar</a>
-                    </div>
-                </td>
-            </tr>
-
-            
-
+            @if (Model != null)
+            {
+                @foreach (var Modali in Model)
+                {
+                    <tr>
+                        <td>@Modali.Id</td>
+                        <td>@Modali.Modalidade</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a class="btn btn-outline-warning" asp-controller="Modalidade" asp-action="EditarModali">Editar</a>
+                                <a role="button" class="btn btn-outline-danger" asp-controller="Modalidade" asp-action="ExcluirModali">Apagar</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }            
         </tbody>
     </table>
 </div>

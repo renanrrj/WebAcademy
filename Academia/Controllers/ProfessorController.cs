@@ -1,12 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Academia.Dados;
+using Academia.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Academia.Controllers
 {
     public class ProfessorController : Controller
     {
+        readonly private ContextoBanco _db;
+
+        public ProfessorController(ContextoBanco db)
+        {
+            _db = db;
+        }
+
         public IActionResult IndexProf()
         {
-            return View();
+            IEnumerable <ProfessorModel> professor = _db.Tb_Professores;
+            return View(professor);
         }
         public IActionResult AdicionarProf()
         {

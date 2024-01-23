@@ -7,7 +7,7 @@ namespace Academia.Models
         public int Id { get; set; }
         public string Nome { get; set; }
 
-       // [Column(TypeName = "Date")]
+       [Column(TypeName = "Date")]
         public DateTime DataNasc { get; set;}
         public int CPF { get; set;}
         public string Endereco { get; set;}
@@ -15,7 +15,7 @@ namespace Academia.Models
         public int Telefone { get; set;}
         public string Modalidade { get; set;}
 
-       // [Column(TypeName = "Date")]
+       [Column(TypeName = "Date")]
         public DateTime DataPgto { get; set;}
 
     }
