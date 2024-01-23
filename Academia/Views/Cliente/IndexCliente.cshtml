@@ -2,12 +2,13 @@
     @model IEnumerable<ClienteModel>
     ViewData["Title"] = "Cliente";
 }
+
 <div class="container">
 
     <div class="d-flex justify-content-between align-items-center mb-5">
         <h1>Clientes</h1>
         <a class="btn btn-outline-success mx-2" asp-controller="Cliente" asp-action="AdicionarCliente">Adicionar Clientes</a>
-    </div>    
+    </div>
 
     <table class="table table-primary table-striped">
         <thead>
@@ -39,10 +40,8 @@
                         <td>@x.Modalidade</td>
                         <td>@x.DataPgto</td>
                         <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <a class="btn btn-outline-warning" asp-controller="Cliente" asp-action="EditarCliente">Editar</a>
-                                <a role="button" class="btn btn-outline-danger" asp-controller="Cliente" asp-action="ExcluirCliente">Apagar</a>
-                            </div>
+                            <a class="btn btn-outline-warning mx-2" asp-route-id="@x.Id" asp-controller="Cliente" asp-action="EditarCliente">Editar</a>
+                            <a class="btn btn-outline-danger mx-2" asp-route-id="@x.Id" asp-controller="Cliente" asp-action="ExcluirCliente">Apagar</a>
                         </td>
                     </tr>
                 }

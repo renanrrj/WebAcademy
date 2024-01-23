@@ -13,6 +13,7 @@ namespace Academia.Controllers
             _db = db;
         }
 
+        [HttpGet]
         public IActionResult IndexModali()
         {
             IEnumerable<ModalidadeModel> modalidade = _db.Tb_Modalidades;
@@ -29,6 +30,20 @@ namespace Academia.Controllers
         public IActionResult ExcluirModali()
         {
             return View();
+        }
+
+        //------------------------------------------------------------------------------------------
+        [HttpPost]
+        public IActionResult AdicionarModali(ModalidadeModel modali)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Tb_Modalidades.Add(modali);
+                _db.SaveChanges();
+                return RedirectToAction("IndexModali");
+            }
+            else { return View(); }
+
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Academia.Dados;
 using Academia.Models;
-using Academia.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Academia.Controllers
@@ -26,9 +25,22 @@ namespace Academia.Controllers
             return View();
         }
 
-        public IActionResult EditarCliente()
+        [HttpGet]
+        public IActionResult EditarCliente( int? id)
         {
-            return View();
+            if(id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            ClienteModel cliente = _db.Tb_Clientes.FirstOrDefault(x => x.Id == id);
+
+            if(cliente == null)
+            {
+                return NotFound();
+            }
+
+            return View(cliente);
         }
 
         public IActionResult ExcluirCliente()
@@ -48,6 +60,6 @@ namespace Academia.Controllers
             }
             else { return View(); }
             
-        }
+        }        
     }
 }

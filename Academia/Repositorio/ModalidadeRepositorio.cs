@@ -2,12 +2,12 @@
 
 namespace Academia.Repositorio
 {
-    public class ClienteRepositorio 
+    public class ModalidadeRepositorio
     {
         private readonly ContextoBanco _contextoBanco;
 
-        public ClienteRepositorio(ContextoBanco ContBanco)
-        {        
+        public ModalidadeRepositorio(ContextoBanco ContBanco)
+        {
             _contextoBanco = ContBanco;
         }
     }

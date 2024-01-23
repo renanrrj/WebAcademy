@@ -1,20 +1,26 @@
 ﻿@{
+    @model ModalidadeModel
     ViewData["Title"] = "Adicionar Modalidade";
 }
 <div class="">
-    <h1>Editar de Modalidades</h1>
 
+    <div class="container p-3 rounded-5">
 
-    <form>
-        <div class="mb-3">
-            <label for="Nome">Nome</label>
-            <input type="text" class="form-control" placeholder="Nome Completo">
+        <div class="mb-5 text-center">
+            <h1>Adicionar de Modalidades</h1>
         </div>
 
-        <a class="btn btn-outline-primary" asp-controller="Modalidade" asp-action="IndexModali">Voltar</a>
-        <a class="btn btn-outline-success">Adicionar</a>
+        <form method="post" asp-controller="Modalidade" asp-action="AdicionarModali">
+
+        <div class="mb-3">
+            <label for="Modali">Modalidade</label>
+            <input type="text" class="form-control" asp-for="Modalidade" placeholder="Modalidade">
+        </div>
+
+        <a class="btn btn-outline-primary w-40" asp-controller="Modalidade" asp-action="IndexModali">Voltar</a>
+        <button type="submit" class="btn btn-outline-success w-40">Adicionar</button>
 
     </form>
 
-
+    </div>
 </div>

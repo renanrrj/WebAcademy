@@ -16,7 +16,7 @@ namespace Academia.Controllers
         public IActionResult IndexProf()
         {
             IEnumerable <ProfessorModel> professor = _db.Tb_Professores;
-            return View(professor);
+            return View(professor); // "select"
         }
         public IActionResult AdicionarProf()
         {
@@ -29,6 +29,19 @@ namespace Academia.Controllers
         public IActionResult ExcluirProf()
         {
             return View();
+        }
+
+        //------------------------------------------------------------------------------------------
+        [HttpPost]
+        public IActionResult AdicionarProf(ProfessorModel profes)
+        {
+            if(ModelState.IsValid)
+            {
+                _db.Tb_Professores.Add(profes);
+                _db.SaveChanges();
+                return RedirectToAction("IndexProf");
+            }
+            else { return View(); }
         }
     }
 }

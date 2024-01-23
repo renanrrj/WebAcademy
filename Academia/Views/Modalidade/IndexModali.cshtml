@@ -2,14 +2,13 @@
     @model IEnumerable<ModalidadeModel>
     ViewData["Title"] = "Modalidade";
 }
-<div class="text-center">
 
-    <h1>Modalidades</h1>
+<div class="container"
 
-    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <a class="btn btn-outline-primary" asp-controller="Modalidade" asp-action="AdicionarProf">Adicionar Modalidade</a>
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <h1>Modalidades</h1>
+        <a class="btn btn-outline-primary" asp-controller="Modalidade" asp-action="AdicionarModali">Adicionar Modalidade</a>
     </div>
-    <br />
 
     <table class="table table-primary table-striped">
         <thead>
@@ -25,18 +24,18 @@
             {
                 @foreach (var Modali in Model)
                 {
-                    <tr>
-                        <td>@Modali.Id</td>
-                        <td>@Modali.Modalidade</td>
-                        <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <a class="btn btn-outline-warning" asp-controller="Modalidade" asp-action="EditarModali">Editar</a>
-                                <a role="button" class="btn btn-outline-danger" asp-controller="Modalidade" asp-action="ExcluirModali">Apagar</a>
-                            </div>
-                        </td>
-                    </tr>
+                   <tr>
+                       <td>@Modali.Id</td>
+                       <td>@Modali.Modalidade</td>
+                       <td>
+                           <div class="btn-group" role="group" aria-label="Basic example">
+                               <a class="btn btn-outline-warning" asp-controller="Modalidade" asp-for="Id" asp-action="EditarModali">Editar</a>
+                               <a role="button" class="btn btn-outline-danger" asp-controller="Modalidade" asp-for="Modalidade" asp-action="ExcluirModali">Apagar</a>
+                           </div>
+                       </td>
+                   </tr>
                 }
-            }            
+            }
         </tbody>
     </table>
 </div>
