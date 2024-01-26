@@ -1,12 +1,56 @@
 ﻿@{
-    ViewData["Title"] = "Apagar Professor";
+    @model ProfessorModel
+    ViewData["Title"] = "Excluir Cliente";
 }
 
-<div class="text-ceneter">
-    <h3>Realmente deseja apagar o professor: </h3>
+<div class="container">
+    <h1>Excluir Professor</h1>
+
+
+    <form method="post" asp-controller="Professor" asp-action="ExcluirProf">
+
+        <h2>"Tem certeza q deseja excluir o registro:"</h2>
+
+        <div class="mb-3">
+            <label for="Nome">Nome</label>
+            <input type="text" class="form-control" asp-for="Nome" placeholder="Nome Completo" disabled>
+        </div>
+
+        <div class="mb-3">
+            <label for="datanasc">DataNasc</label>
+            <input type="date" class="form-control" asp-for="DataNasc" placeholder="Data de Nascimento" disabled>
+        </div>
+
+        <div class="mb-3">
+            <label for="cpf">CPF</label>
+            <input type="text" class="form-control" asp-for="CPF" placeholder="CPF" disabled>
+        </div>
+
+        <div class="mb-3">
+            <label for="End">Endereço</label>
+            <input type="text" class="form-control" asp-for="Endereco" placeholder="Endereço Completo" disabled>
+        </div>
+
+        <div class="mb-3">
+            <label for="cep">CEP</label>
+            <input type="text" class="form-control" asp-for="CEP" placeholder="CEP" disabled>
+        </div>
+
+        <div class="mb-3">
+            <label for="Ctt">Telefone</label>
+            <input type="text" class="form-control" asp-for="Telefone" placeholder="Telefone com DDD" disabled>
+        </div>
+
+        <div class="mb-3">
+            <label for="Modali">Modalidade</label>
+            <input type="text" class="form-control" asp-for="Modalidade" placeholder="Modalidade" disabled>
+        </div>
+
+        <a class="btn btn-outline-primary w-40" asp-controller="Professor" asp-action="IndexProf">Voltar</a>
+        <button type="submit" class="btn btn-outline-danger w-40" asp-controller="Professor" asp-action="ExcluirProf">Excluir</button>
+
+    </form>
+
+
 </div>
-
-<a class="btn btn-outline-primary btn-block" role="button" asp-controller="Professor" asp-action="IndexProf"> Cancelar Exclusão</a>
-<a class="btn btn-outline-danger btn-block" role="button" asp-controller="Professor" asp-action="ExlcuirProf"> Confirmar Exclusão</a>
-
 

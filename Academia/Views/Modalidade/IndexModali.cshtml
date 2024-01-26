@@ -3,7 +3,7 @@
     ViewData["Title"] = "Modalidade";
 }
 
-<div class="container"
+<div class="container">
 
     <div class="d-flex justify-content-between align-items-center mb-5">
         <h1>Modalidades</h1>
@@ -29,8 +29,8 @@
                        <td>@Modali.Modalidade</td>
                        <td>
                            <div class="btn-group" role="group" aria-label="Basic example">
-                               <a class="btn btn-outline-warning" asp-controller="Modalidade" asp-for="Id" asp-action="EditarModali">Editar</a>
-                               <a role="button" class="btn btn-outline-danger" asp-controller="Modalidade" asp-for="Modalidade" asp-action="ExcluirModali">Apagar</a>
+                               <a class="btn btn-outline-warning" asp-controller="Modalidade" asp-route-id="@Modali.Id" asp-action="EditarModali">Editar</a>
+                               <a role="button" class="btn btn-outline-danger" asp-controller="Modalidade" asp-route-id="@Modali.Id" asp-action="ExcluirModali">Apagar</a>
                            </div>
                        </td>
                    </tr>

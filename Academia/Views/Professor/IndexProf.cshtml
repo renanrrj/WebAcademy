@@ -2,7 +2,8 @@
     @model IEnumerable<ProfessorModel>
     ViewData["Title"] = "Professor";
 }
-<div class="text-center">
+
+<div class="container">
 
     <h1>Professores</h1>
 
@@ -40,8 +41,8 @@
                         <td>@Profe.Modalidade</td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a class="btn btn-outline-warning" asp-controller="Professor" asp-action="EditarProf">Editar</a>
-                                <a role="button" class="btn btn-outline-danger" asp-controller="Professor" asp-action="ExcluirProf">Apagar</a>
+                                <a class="btn btn-outline-warning" asp-route-id="@Profe.Id" asp-controller="Professor" asp-action="EditarProf">Editar</a>
+                                <a role="button" class="btn btn-outline-danger" asp-route-id="@Profe.Id" asp-controller="Professor" asp-action="ExcluirProf">Apagar</a>
                             </div>
                         </td>
                     </tr>

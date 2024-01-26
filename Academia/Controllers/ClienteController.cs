@@ -20,20 +20,21 @@ namespace Academia.Controllers
             return View(clientes);
         }
 
+        [HttpGet]
         public IActionResult AdicionarCliente()
         {
             return View();
         }
 
         [HttpGet]
-        public IActionResult EditarCliente( int? id)
+        public IActionResult EditarCliente(int? id)
         {
             if(id == null || id == 0)
             {
                 return NotFound();
             }
 
-            ClienteModel cliente = _db.Tb_Clientes.FirstOrDefault(x => x.Id == id);
+            ClienteModel cliente = _db.Tb_Clientes.FirstOrDefault(c => c.Id == id);
 
             if(cliente == null)
             {
@@ -43,9 +44,20 @@ namespace Academia.Controllers
             return View(cliente);
         }
 
-        public IActionResult ExcluirCliente()
+        [HttpGet]
+        public IActionResult ExcluirCliente(int? id)
         {
-            return View();
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            ClienteModel cliente = _db.Tb_Clientes.FirstOrDefault(x => x.Id == id);
+
+            if(cliente == null)
+            {
+                return NotFound();
+            }
+            return View(cliente);
         }
 
         //------------------------------------------------------------------------------------------
@@ -58,8 +70,32 @@ namespace Academia.Controllers
                 _db.SaveChanges();
                 return RedirectToAction("IndexCliente");
             }
-            else { return View(); }
-            
-        }        
+            else { return View(); }            
+        }
+
+        [HttpPost]
+        public IActionResult EditarCliente(ClienteModel cliente)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Tb_Clientes.Update(cliente);
+                _db.SaveChanges();
+                return RedirectToAction("IndexCliente");
+            }
+            else { return View(cliente); }
+        }
+
+        [HttpPost]
+        public IActionResult ExcluirCliente(ClienteModel cliente)
+        {
+            if (cliente == null)
+            {
+                return NotFound();
+            }
+            _db.Tb_Clientes.Remove(cliente);
+            _db.SaveChanges();
+            return RedirectToAction("IndexCliente");
+
+        }
     }
 }

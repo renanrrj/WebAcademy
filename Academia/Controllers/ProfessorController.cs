@@ -22,13 +22,34 @@ namespace Academia.Controllers
         {
             return View();
         }
-        public IActionResult EditarProf()
+        public IActionResult EditarProf(int? id)
         {
-            return View();
+            if(id == null || id == 0)
+            {
+                return NotFound();
+            }
+            
+            ProfessorModel professor = _db.Tb_Professores.FirstOrDefault(p => p.Id == id);
+
+            if (professor == null) 
+            {
+                return NotFound();
+            }
+            return View(professor);
         }
-        public IActionResult ExcluirProf()
+        public IActionResult ExcluirProf(int? id)
         {
-            return View();
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            ProfessorModel professor = _db.Tb_Professores.FirstOrDefault(x => x.Id == id);
+
+            if (professor == null)
+            {
+                return NotFound();
+            }
+            return View(professor);
         }
 
         //------------------------------------------------------------------------------------------
@@ -42,6 +63,31 @@ namespace Academia.Controllers
                 return RedirectToAction("IndexProf");
             }
             else { return View(); }
+        }
+
+        [HttpPost]
+        public IActionResult EditarProf(ProfessorModel professor)
+        {
+            if(ModelState.IsValid)
+            {
+                _db.Tb_Professores.Update(professor);
+                _db.SaveChanges();
+                return RedirectToAction("IndexProf");
+            }
+            else {return View(professor);}
+        }
+
+        [HttpPost]
+        public IActionResult ExcluirProf(ProfessorModel professor)
+        {
+            if (professor== null)
+            {
+                return NotFound();
+            }
+            _db.Tb_Professores.Remove(professor);
+            _db.SaveChanges();
+            return RedirectToAction("IndexProf");
+
         }
     }
 }

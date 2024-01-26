@@ -1,5 +1,22 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    @model ModalidadeModel
+    ViewData["Title"] = "Editar Modalidade";
 }
+<div class="">
+    <h1>Editar de Modalidades</h1>
+
+
+    <form method="post" asp-controller="Modalidade" asp-action="ExcluirModali">
+
+        <div class="mb-3">
+            <label for="Nome">Modalidade</label>
+            <input type="text" class="form-control" asp-for="Modalidade" placeholder="Modalidade" disabled>
+        </div>
+
+        <a class="btn btn-outline-primary" asp-controller="Modalidade" asp-action="IndexModali">Voltar</a>
+        <button type="submit" class="btn btn-outline-success w-40">Apagar</button>
+
+    </form>
+
+
+</div>

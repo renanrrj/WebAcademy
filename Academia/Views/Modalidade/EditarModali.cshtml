@@ -1,18 +1,20 @@
 ﻿@{
+    @model ModalidadeModel
     ViewData["Title"] = "Editar Modalidade";
 }
 <div class="">
     <h1>Editar de Modalidades</h1>
 
 
-    <form>
+    <form method="post" asp-controller="Modalidade" asp-action="EditarModali" >
+
         <div class="mb-3">
             <label for="Nome">Modalidade</label>
-            <input type="text" class="form-control" placeholder="Modalidade">
+            <input type="text" class="form-control" asp-for="Modalidade" placeholder="Modalidade">
         </div>
 
         <a class="btn btn-outline-primary" asp-controller="Modalidade" asp-action="IndexModali">Voltar</a>
-        <a class="btn btn-outline-success">Adicionar</a>
+        <button type="submit" class="btn btn-outline-success w-40">Editar</button>
 
     </form>
 

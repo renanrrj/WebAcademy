@@ -1,49 +1,50 @@
 ﻿@{
+    @model ProfessorModel
     ViewData["Title"] = "Editar Professor";
 }
-<div class="">
+
+<div class="container">
     <h1>Editar de Professores</h1>
 
+    <form moethod="post" asp-controller="Professor" asp-action="EditarProf">
 
-
-    <form>
         <div class="mb-3">
             <label for="Nome">Nome</label>
-            <input type="text" class="form-control" placeholder="Nome Completo">
+            <input type="text" class="form-control" asp-for="Nome" placeholder="Nome Completo">
         </div>
 
         <div class="mb-3">
             <label for="Nome">DataNasc</label>
-            <input type="datetime" class="form-control" placeholder="Data de Nascimento">
+            <input type="date" class="form-control" asp-for="DataNasc" placeholder="Data de Nascimento">
         </div>
 
         <div class="mb-3">
             <label for="Nome">CPF</label>
-            <input type="number" class="form-control" placeholder="CPF">
+            <input type="text" class="form-control" asp-for="CPF" placeholder="CPF">
         </div>
 
         <div class="mb-3">
             <label for="End">Endereço</label>
-            <input type="text" class="form-control" placeholder="Endereço Completo">
+            <input type="text" class="form-control" asp-for="Endereco" placeholder="Endereço Completo">
         </div>
 
         <div class="mb-3">
             <label for="Nome">CEP</label>
-            <input type="number" class="form-control" placeholder="CEP">
+            <input type="text" class="form-control" asp-for="CEP" placeholder="CEP">
         </div>
 
         <div class="mb-3">
             <label for="Ctt">Telefone</label>
-            <input type="number" class="form-control" placeholder="Telefone com DDD">
+            <input type="text" class="form-control" asp-for="Telefone" placeholder="Telefone com DDD">
         </div>
 
         <div class="mb-3">
             <label for="Ctt">Modalidade</label>
-            <input type="number" class="form-control" placeholder="Modalidade">
+            <input type="text" class="form-control" asp-for="Modalidade" placeholder="Modalidade">
         </div>
 
         <a class="btn btn-outline-primary" asp-controller="Professor" asp-action="IndexProf">Voltar</a>
-        <a class="btn btn-outline-success">Adicionar</a>
+        <button type="submit" class="btn btn-outline-success w-40">Editar</button>
 
     </form>
 
